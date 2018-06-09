@@ -10,3 +10,4 @@ install:
   - python manage.py migrate
 script:
   - python manage.py test profiles
+  - cd ../

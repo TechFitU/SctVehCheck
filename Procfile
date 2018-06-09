@@ -1,1 +1,1 @@
-web: cd ../ && gunicorn --pythonpath src sctvehcheck.wsgi
+web: gunicorn --pythonpath src sctvehcheck.wsgi
