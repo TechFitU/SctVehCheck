@@ -88,7 +88,7 @@ INSTALLED_APPS = (
     'profiles',
     'accounts',
     'hello',
-#Aplicacion para el chequeo de vehiculos
+    #Aplicacion para el chequeo de vehiculos
     'vehiclecheck',
     #Global configuration
     'globalconfig',
@@ -97,7 +97,7 @@ INSTALLED_APPS = (
     #Captcha para el formulario de verificacion vehicular
     #'captcha',
     #Aplicacion que coloca un boton de borrado en cada widget de tipo texto
-    'clearable_widget',
+    # 'clearable_widget',
 
 
     #Smart selects

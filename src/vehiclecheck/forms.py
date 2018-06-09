@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
-from django.forms import ModelForm, ValidationError
-from clearable_widget import ClearableInput
-import django.forms as forms
+from django.forms import ModelForm
 #from captcha.fields import CaptchaField
 #Import custom models here
 from .models import Vehiculo, VerificacionVehiculo, Cliente, Domicilio
@@ -12,6 +10,17 @@ from .widgets import DateWidget, CustomCheckBoxWidget, TimeWidget
 
 #Import make_ajax_field helper to build an ajax form field 
 from ajax_select import make_ajax_field
+# Import make_ajax_field helper to build an ajax form field
+from ajax_select import make_ajax_field
+from django.forms import ModelForm
+
+# from captcha.fields import CaptchaField
+# Import custom models here
+from .models import Vehiculo, VerificacionVehiculo, Cliente, Domicilio
+# Custom widgets for some form fields
+from .widgets import DateWidget, CustomCheckBoxWidget, TimeWidget
+
+
 #Custom widgets for some form fields
 class ClienteForm(ModelForm):
     class Meta:
@@ -66,12 +75,12 @@ class VehiculoForm(ModelForm):
         fields = "__all__"
         localized_fields = "__all__"
 
-        widgets ={
-            'nombre': ClearableInput(),
-            'apellidos': ClearableInput(),
-            'rfc': ClearableInput(),
-
-        }
+        # widgets ={
+        #     'nombre': ClearableInput(),
+        #     'apellidos': ClearableInput(),
+        #     'rfc': ClearableInput(),
+        #
+        # }
     
     cliente  = make_ajax_field(Vehiculo, 'cliente', 'cliente', \
         help_text="Buscar nombre, apellidos, rfc del cliente", \
