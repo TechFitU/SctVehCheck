@@ -1,7 +1,8 @@
 # In production set the environment variable like this:
 #    DJANGO_SETTINGS_MODULE=sctvehcheck.settings.production
-from .base import *             # NOQA
 import logging.config
+
+from .base import *  # NOQA
 
 # For security and performance reasons, DEBUG is turned off
 DEBUG = False
@@ -32,7 +33,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Must mention ALLOWED_HOSTS in production!
-# ALLOWED_HOSTS = ["sctvehcheck.com"]
+ALLOWED_HOSTS = ["sctvehcheck.com", "127.0.0.1"]
 
 # Cache the templates in memory for speed-up
 loaders = [
@@ -46,7 +47,7 @@ TEMPLATES[0]['OPTIONS'].update({"loaders": loaders})
 TEMPLATES[0].update({"APP_DIRS": False})
 
 # Define STATIC_ROOT for the collectstatic command
-STATIC_ROOT = str(BASE_DIR.parent / 'site' / 'static')
+STATIC_ROOT = str(BASE_DIR.parent / 'static')
 
 # Log everything to the logs directory at the top
 LOGFILE_ROOT = BASE_DIR.parent / 'logs'
@@ -87,3 +88,6 @@ LOGGING = {
 }
 
 logging.config.dictConfig(LOGGING)
+import django_heroku
+
+django_heroku.settings(locals())
