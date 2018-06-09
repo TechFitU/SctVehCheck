@@ -1,8 +1,8 @@
-# [SctVehCheck][docs]
-
-[![Build Status](https://travis-ci.org/arocks/edge.svg?branch=master)](https://travis-ci.org/arocks/edge)
+# SctVehCheck
 
 **A web application for vehicle inspection registration.**
+[![Build Status](https://travis-ci.org/arocks/edge.svg?branch=master)](https://travis-ci.org/arocks/edge)
+
 It is built with [Python][0] using the [Django Web Framework][1].
 ## Features
 
