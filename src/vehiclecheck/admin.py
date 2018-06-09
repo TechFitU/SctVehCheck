@@ -1,31 +1,21 @@
 # -*- coding: utf-8 -*-
-from django.contrib import admin
-from django.db import models
-from django.utils import timezone
-from django.http import HttpResponse, Http404
-from django.core.exceptions import ObjectDoesNotExist
-from django.contrib.auth.models import User, Group
-from django.contrib.auth.admin import UserAdmin, GroupAdmin
 from django.conf.urls import url
+from django.contrib import admin
 from django.forms.models import BaseInlineFormSet
-#Resources of import-export app
+from django.http import HttpResponse
+from django.utils import timezone
+# Resources of import-export app
 from import_export import resources
-
-#Clearable input widget for text fields
-from clearable_widget import ClearableInput
-
-#django-ajax-selects form and admin
-from ajax_select import make_ajax_form
-from ajax_select.admin import AjaxSelectAdmin
-from ajax_select.fields import autoselect_fields_check_can_add
-
 # Register your models here.
-from vehiclecheck.models import Cliente, Vehiculo, VerificacionVehiculo, Domicilio, TipoVehiculo,\
-        TipoServicio, Estado, Municipio
+from vehiclecheck.models import Cliente, Vehiculo, VerificacionVehiculo, Domicilio, TipoVehiculo, \
+    TipoServicio, Estado
 
-#Import custom forms
-from .forms import ClienteForm, VerificacionVehiculoForm, VerificacionVehiculoCaptchaForm, \
-                VehiculoForm, DomicilioForm
+# Import custom forms
+from .forms import ClienteForm, VerificacionVehiculoForm, VehiculoForm, DomicilioForm
+
+
+# Clearable input widget for text fields
+# django-ajax-selects form and admin
 
 class CustomVehiculoInlineFormSet(BaseInlineFormSet):
     def save(self):
@@ -63,10 +53,10 @@ class DomicilioStackedInline(admin.StackedInline):
             ('colonia', 'estado', 'municipio','actual'),)}),
     )
 
-    formfield_overrides = {
-        models.CharField: {'widget': ClearableInput}
-
-    }
+    # formfield_overrides = {
+    #     models.CharField: {'widget': ClearableInput}
+    #
+    # }
     extra=1
 
 
