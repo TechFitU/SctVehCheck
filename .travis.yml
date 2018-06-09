@@ -6,7 +6,6 @@ python:
 install:
   - pip install -r requirements.txt
   - cd src/
-  - cp sctvehcheck/settings/local.sample.env sctvehcheck/settings/local.env
   - python manage.py migrate
 script:
   - python manage.py test profiles
