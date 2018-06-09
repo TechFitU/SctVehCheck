@@ -1,6 +1,9 @@
-from .base import *             # NOQA
-import sys
 import logging.config
+import sys
+
+import django_heroku
+
+from .base import *  # NOQA
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -94,3 +97,5 @@ LOGGING = {
 }
 
 logging.config.dictConfig(LOGGING)
+
+django_heroku.settings(locals())
