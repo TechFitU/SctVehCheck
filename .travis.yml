@@ -6,6 +6,7 @@ python:
 install:
   - pip install -r requirements.txt
   - cd src/
+  - python manage.py check
   - python manage.py migrate
 script:
   - python manage.py test profiles
