@@ -8,6 +8,14 @@ from .base import *  # NOQA
 DEBUG = False
 TEMPLATE_DEBUG = False
 
+import os
+
+DATABASES = {
+    # Raises ImproperlyConfigured exception if DATABASE_URL not in
+    'default': os.environ
+}
+
+
 # Strict password authentication and validation
 # To use this setting, install the Argon2 password hashing algorithm.
 PASSWORD_HASHERS = [
