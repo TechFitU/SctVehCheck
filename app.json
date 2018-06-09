@@ -1,0 +1,22 @@
+{
+  "name": "SctVehCheck",
+  "description": "Vehicle inspection system for a private company, created as a Python/Django app.",
+  "image": "heroku/python",
+  "repository": "https://github.com/TechFitU/SctVehCheck.git",
+  "keywords": ["python", "django" ],
+  "addons": [ "heroku-postgresql" ],
+  "env": {
+    "SECRET_KEY": {
+      "description": "s5ybg4zq%g$f3d#dkb_20707suro0w&tz&e+zq=!oh6a9@&vms",
+      "generator": "secret"
+    }
+  },
+  "environments": {
+    "test": {
+      "scripts": {
+        "test-setup": "python manage.py collectstatic --noinput",
+        "test": "python manage.py test"
+      }
+    }
+  }
+}

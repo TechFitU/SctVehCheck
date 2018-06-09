@@ -1,0 +1,20 @@
+.breadcrumb {
+	height: 38px;
+}
+
+.sidebar-menu .django-admin-logo{
+	height: 242px;
+}
+
+#user-tools .dropdown-toggle{
+	background-color: #e74c3c;
+}
+
+form .aligned .results_on_deck {
+ 	padding-left: 0 !important;
+  	margin-left: 0 !important;
+}
+
+.object-tools{
+	float:right;
+}
