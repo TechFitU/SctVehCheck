@@ -1,6 +1,6 @@
 language: python
 env:
- - PYTHONPATH=`pwd` + "src/"
+ - PYTHONPATH=`pwd`
 python:
   - "3.6"
 install:
