@@ -51,7 +51,6 @@ TEMPLATES = [
 
 # Use 12factor inspired environment variables or from a file
 import environ
-env = environ.Env()
 
 # Create a local.env file in the settings directory
 # But ideally this env file should be outside the git repo
@@ -59,6 +58,7 @@ env_file = Path(__file__).resolve().parent / 'local.env'
 if env_file.exists():
     environ.Env.read_env(str(env_file))
 
+env = environ.Env()
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
 
