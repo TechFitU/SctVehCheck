@@ -32,7 +32,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Must mention ALLOWED_HOSTS in production!
-ALLOWED_HOSTS = ["sctvehcheck.com", "127.0.0.1"]
+ALLOWED_HOSTS = ["sctvehcheck.herokuapp.com", "127.0.0.1"]
 
 # Cache the templates in memory for speed-up
 loaders = [
