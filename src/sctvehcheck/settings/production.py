@@ -95,7 +95,7 @@ import dj_database_url
 # Activate Django-Heroku configuration system.
 # Docs: https://devcenter.heroku.com/articles/django-app-configuration
 static_files = os.environ['ENV'] != 'development'
-django_heroku.settings(locals(), databases=False, staticfiles=static_files)
+django_heroku.settings(locals(), databases=False)
 
 # override DATABASE_URL set by django_heroku because it forces SSL mode locally
 ssl_require = os.environ['ENV'] != 'development'
