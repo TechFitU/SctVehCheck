@@ -1,6 +1,10 @@
 # In production set the environment variable like this:
 #    DJANGO_SETTINGS_MODULE=sctvehcheck.settings.production
 import logging.config
+import os
+
+import dj_database_url
+import django_heroku
 
 from .base import *  # NOQA
 
@@ -89,8 +93,11 @@ LOGGING = {
 
 logging.config.dictConfig(LOGGING)
 
-import django_heroku
-
 # Activate Django-Heroku configuration system.
 # Docs: https://devcenter.heroku.com/articles/django-app-configuration
 django_heroku.settings(locals())
+
+# override DATABASE_URL set by django_heroku because it forces SSL mode locally
+ssl_require = os.environ['ENV'] != 'development'
+locals()['DATABASES']['default'] = dj_database_url.config(
+    conn_max_age=django_heroku.MAX_CONN_AGE, ssl_require=ssl_require)
