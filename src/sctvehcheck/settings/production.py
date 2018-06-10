@@ -1,6 +1,6 @@
 # In production set the environment variable like this:
 #    DJANGO_SETTINGS_MODULE=sctvehcheck.settings.production
-import logging
+import logging.config
 
 from .base import *  # NOQA
 
