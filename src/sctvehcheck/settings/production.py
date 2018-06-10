@@ -95,7 +95,7 @@ logging.config.dictConfig(LOGGING)
 
 # Activate Django-Heroku configuration system.
 # Docs: https://devcenter.heroku.com/articles/django-app-configuration
-django_heroku.settings(locals())
+django_heroku.settings(locals(), databases=False)
 
 # override DATABASE_URL set by django_heroku because it forces SSL mode locally
 ssl_require = os.environ['ENV'] != 'development'
