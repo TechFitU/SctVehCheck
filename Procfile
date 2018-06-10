@@ -1,2 +1,2 @@
-release: python src/manage.py migrate --noinput
-web: gunicorn --pythonpath src sctvehcheck.wsgi
+release: ./release_bash.sh
+web: gunicorn --pythonpath src sctvehcheck.wsgi --log-file -
