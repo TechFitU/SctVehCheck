@@ -94,3 +94,7 @@ import django_heroku
 # Activate Django-Heroku configuration system.
 # Docs: https://devcenter.heroku.com/articles/django-app-configuration
 django_heroku.settings(locals())
+import os
+
+if os.environ['DATABASES']['default']['ENGINE'] == 'django.db.backends.sqlite3':
+    del os.environ['DATABASES']['default']['OPTIONS']['sslmode']
