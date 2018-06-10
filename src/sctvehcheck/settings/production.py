@@ -88,12 +88,17 @@ LOGGING = {
 }
 
 logging.config.dictConfig(LOGGING)
-#
-# # Activate Django-Heroku configuration system.
-# # Docs: https://devcenter.heroku.com/articles/django-app-configuration
-# django_heroku.settings(locals(), databases=False)
-#
-# # override DATABASE_URL set by django_heroku because it forces SSL mode locally
-# ssl_require = os.environ['ENV'] != 'development'
-# locals()['DATABASES']['default'] = dj_database_url.config(
-#     conn_max_age=django_heroku.MAX_CONN_AGE, ssl_require=ssl_require)
+import os
+import django_heroku
+import dj_database_url
+
+# Activate Django-Heroku configuration system.
+# Docs: https://devcenter.heroku.com/articles/django-app-configuration
+static_files = os.environ['ENV'] != 'development'
+django_heroku.settings(locals(), databases=False, staticfiles=static_files)
+
+# override DATABASE_URL set by django_heroku because it forces SSL mode locally
+ssl_require = os.environ['ENV'] != 'development'
+
+locals()['DATABASES']['default'] = dj_database_url.config(
+    conn_max_age=django_heroku.MAX_CONN_AGE, ssl_require=ssl_require)
