@@ -26,13 +26,15 @@ bootstrap-admin = "*"
 requests = "*"
 python-memcached = "*"
 
+# Best Password hashing algorithm Argon2 in Django
+# https://docs.djangoproject.com/en/1.11/topics/auth/passwords/#using-argon2-with-django
+'django[argon2]' = "*"
 
 
 [dev-packages]
 
 django-debug-toolbar = ">=1.8"
 werkzeug = ">=0.12.2"
-
 
 [requires]
 
