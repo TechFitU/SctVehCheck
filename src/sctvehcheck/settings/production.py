@@ -88,3 +88,9 @@ LOGGING = {
 }
 
 logging.config.dictConfig(LOGGING)
+
+import django_heroku
+
+# Activate Django-Heroku configuration system.
+# Docs: https://devcenter.heroku.com/articles/django-app-configuration
+django_heroku.settings(locals())
