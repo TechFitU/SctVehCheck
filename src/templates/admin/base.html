@@ -1,4 +1,6 @@
-{% load admin_static bootstrap_admin_template_tags %}{% display_sidebar_menu cl.has_filters as is_displaying_menu %}<!DOCTYPE html>
+{% load admin_static bootstrap_admin_template_tags i18n %}
+{% display_sidebar_menu cl.has_filters as is_displaying_menu %}
+<!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -76,9 +78,37 @@
                   <img src="{% static "admin/images/logoSCT.png" %}" alt="{{ site_header|default:_('Django administration') }}">
                 </a>
               {% endblock branding %}
+
               {% block filters %}{% endblock filters %}
               {% render_menu_app_list %}
+              <ul class="nav nav-sidebar has-active-menu module">
+                <li>
+                  <a href="#" class="section" title="LANGUAGES SUPPORTED">
+                    {% trans "LANGUAGE" %}
+                  </a>
+                </li>
+                <li>
+                  <form class="form-inline" action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{ redirect_to }}"/>
+                    <select id="language" name="language" class="form-control" style="width:100%;">
+                      {% get_current_language as LANGUAGE_CODE %}
+                      {% get_available_languages as LANGUAGES %}
+                      {% get_language_info_list for LANGUAGES as languages %}
+                      {% for language in languages %}
+                      <option value="{{ language.code }}" {% if language.code== LANGUAGE_CODE %} selected{% endif %}>
+                        {{ language.name_translated }} ({{ language.code }})
+                      </option>
+                      {% endfor %}
+
+                    </select>
+                    <button type="submit">Go</button>
+
+                  </form>
+                </li>
+              </ul>
             </div>
+
           {% endblock sidebar_menu %}
         {% endif %}
       {% endif %}
@@ -105,6 +135,7 @@
                 {% endif %}
                 </h1>
               {% endblock %}
+
               <div id="user-tools" class="btn-group">
                 <div class="btn-group">
                   <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
@@ -115,6 +146,7 @@
                     {% endif %}
                     <span class="caret"></span>
                   </button>
+
 
                   {% url 'django-admindocs-docroot' as docsroot %}
                   <ul class="dropdown-menu pull-right" role="menu">
@@ -133,6 +165,7 @@
                     </li>
                   </ul>
                 </div>
+
                 {% if docsroot %}
                   <a href="{{ docsroot }}" title="{% trans 'Documentation' %}" class="btn btn-default hidden-sm"><span class="glyphicon glyphicon-book"></span></a>
                 {% endif %}
@@ -176,7 +209,20 @@
   <script src="{% static 'bootstrap_admin/js/base.js' %}"></script>
 
 {% endblock bootstrap_admin_js %}
+  {% block js %}
 
-{% block js %}{% endblock js %}
+  {% endblock js %}
+
+  <script type="text/javascript">
+  /*(function(){
+    document.onready = function(){
+      document.querySelector("#language").addEventListener("change", function(e){
+        e.target.form.submit();
+      });
+    };
+  })()
+*/
+
+  </script>
 </body>
 </html>

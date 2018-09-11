@@ -1,0 +1,56 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-15 16:55-0500\n"
+"PO-Revision-Date: 2018-06-15 16:39-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.8\n"
+
+#: .\globalconfig\apps.py:9
+msgid "Global settings"
+msgstr "Configuraciones globales"
+
+#: .\globalconfig\models.py:7
+msgid "Site name"
+msgstr "Nombre del sitio"
+
+#: .\globalconfig\models.py:8
+msgid "Company name"
+msgstr "Nombre de compañía"
+
+#: .\globalconfig\models.py:8
+msgid "Company X"
+msgstr "Compañía X"
+
+#: .\globalconfig\models.py:9
+msgid "Maintenance mode"
+msgstr "Modo mantenimiento"
+
+#: .\globalconfig\models.py:10
+msgid "Approval No."
+msgstr "No. Aprobación."
+
+#: .\globalconfig\models.py:11
+msgid "Accreditation No."
+msgstr "No. Acreditación."
+
+#: .\globalconfig\models.py:14
+#, python-format
+msgid "Company %(company)s hosted in %(site_name)s"
+msgstr "Compañía %(company)s alojada en %(site_name)s"
+
+#: .\globalconfig\models.py:18
+msgid "Company settings"
+msgstr "Configuraciones de la compañía"

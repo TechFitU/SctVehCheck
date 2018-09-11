@@ -1,0 +1,309 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-15 16:55-0500\n"
+"PO-Revision-Date: 2018-06-15 16:53-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.8\n"
+
+#: .\sctvehcheck\settings\base.py:165
+msgid "English (US)"
+msgstr "Inglés (US)"
+
+#: .\sctvehcheck\settings\base.py:166
+msgid "Spanish"
+msgstr "Español"
+
+#: .\templates\admin\base.html:79 .\templates\admin\base.html:132
+#: .\templates\admin\base.html:135 .\templates\admin\login.html:23
+msgid "Django administration"
+msgstr "Administración Django"
+
+#: .\templates\admin\base.html:87
+msgid "LANGUAGE"
+msgstr "IDIOMA"
+
+#: .\templates\admin\base.html:157 .\templates\admin\base.html:172
+msgid "Documentation"
+msgstr "Documentación"
+
+#: .\templates\admin\base.html:162
+msgid "Change password"
+msgstr "Cambiar contraseña"
+
+#: .\templates\admin\base.html:166 .\templates\admin\base.html:174
+msgid "Log out"
+msgstr "Cerrar sesión"
+
+#: .\templates\admin\base.html:183 .\templates\admin\change_form.html:30
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\change_form.html:29
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\change_list.html:43
+#: .\templates\registration\password_change_done.html:6
+#: .\templates\registration\password_change_form.html:6
+#: .\templates\registration\password_reset_complete.html:6
+#: .\templates\registration\password_reset_confirm.html:6
+#: .\templates\registration\password_reset_done.html:6
+#: .\templates\registration\password_reset_form.html:6
+msgid "Home"
+msgstr "Inicio"
+
+#: .\templates\admin\base.html:193
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\change_list.html:68
+msgid "Close"
+msgstr "Cerrar"
+
+#: .\templates\admin\base_site.html:3
+msgid "Django site admin"
+msgstr "Administración del sitio"
+
+#: .\templates\admin\change_form.html:47 .\templates\admin\index.html:73
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\change_form.html:46
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\index.html:65
+msgid "Add"
+msgstr "Adicionar"
+
+#: .\templates\admin\change_form.html:73 .\templates\admin\login.html:38
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\change_form.html:74
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\change_list.html:69
+#: .\templates\registration\password_change_form.html:19
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] "Por favor corrija el error debajo."
+msgstr[1] "Por favor corrija los errores debajo."
+
+#: .\templates\admin\change_form.html:73
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\change_form.html:74
+#: .\templates\registration\password_change_form.html:19
+msgid "Please correct the errors below."
+msgstr "Por favor los errores debajo."
+
+#: .\templates\admin\change_form.html:122
+#: .\templates\admin\change_form.html:124
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\change_form.html:123
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\change_form.html:125
+msgid "History"
+msgstr "Historial"
+
+#: .\templates\admin\change_form.html:129
+#: .\templates\admin\change_form.html:131
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\change_form.html:147
+msgid "View on site"
+msgstr "Ver en sitio"
+
+#: .\templates\admin\index.html:26 .\templates\admin\index.html:39
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\index.html:18
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\index.html:31
+msgid "Apps"
+msgstr "Aplicaciones"
+
+#: .\templates\admin\index.html:29 .\templates\admin\index.html:30
+#: .\templates\admin\index.html:88
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\index.html:21
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\index.html:22
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\index.html:80
+#, fuzzy
+#| msgid "Action"
+msgid "Recent Actions"
+msgstr "Acciones recientes"
+
+#: .\templates\admin\index.html:45 .\templates\admin\index.html:75
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\index.html:37
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\index.html:67
+msgid "Search"
+msgstr "Buscar"
+
+#: .\templates\admin\index.html:50
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\index.html:42
+msgid "Action"
+msgstr "Acción"
+
+#: .\templates\admin\index.html:60 .\templates\admin\index.html:66
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\index.html:52
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\index.html:58
+#: .\templates\bootstrap_admin\sidebar_menu.html:6
+#, python-format
+msgid "Models in the %(name)s application"
+msgstr "Modelos de datos en la aplicación %(name)s"
+
+#: .\templates\admin\index.html:74
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\index.html:66
+msgid "Change"
+msgstr "Cambiar"
+
+#: .\templates\admin\index.html:88
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\index.html:80
+msgid "My Actions"
+msgstr "Mis acciones"
+
+#: .\templates\admin\index.html:93
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\index.html:85
+msgid "None available"
+msgstr "Ninguno disponible"
+
+#: .\templates\admin\index.html:119
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\index.html:111
+msgid "Unknown content"
+msgstr "Contenido desconocido"
+
+#: .\templates\admin\index.html:147
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\index.html:139
+#: .\templates\bootstrap_admin\sidebar_menu.html:12
+#: .\templates\bootstrap_admin\sidebar_menu.html:18
+msgid "You don't have permission to edit anything."
+msgstr "Usted no tiene permisos para editar nada."
+
+#: .\templates\admin\login.html:79
+#: .\templates\registration\password_reset_complete.html:18
+msgid "Log in"
+msgstr "Iniciar sesión"
+
+#: .\templates\admin\login.html:90
+msgid "Forgotten your password or username?"
+msgstr "Olvidó su usuario o contraseña?"
+
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\change_list.html:58
+msgid "Filter"
+msgstr "Filtrar"
+
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\change_list.html:92
+#, python-format
+msgid "Add %(name)s"
+msgstr "Añadir %(name)s"
+
+#: .\templates\admin\vehiclecheck\verificacionvehiculo\change_list.html:154
+msgid "Save"
+msgstr "Guardar"
+
+#: .\templates\registration\logged_out.html:9
+msgid "Thanks for spending some quality time with the Web site today."
+msgstr "Gracias por invertir tiempo de calidad con el sitio web hoy."
+
+#: .\templates\registration\logged_out.html:11
+msgid "Log in again"
+msgstr "Iniciar sesión de nuevo"
+
+#: .\templates\registration\password_change_done.html:7
+#: .\templates\registration\password_change_form.html:7
+#: .\templates\registration\password_change_form.html:11
+#: .\templates\registration\password_change_form.html:12
+msgid "Password change"
+msgstr "Cambio de contraseña"
+
+#: .\templates\registration\password_change_done.html:11
+#: .\templates\registration\password_change_done.html:12
+msgid "Password change successful"
+msgstr "Cambio de contraseña exitoso"
+
+#: .\templates\registration\password_change_done.html:16
+msgid "Your password was changed."
+msgstr "Su contraseña fue cambiada."
+
+#: .\templates\registration\password_change_form.html:23
+msgid ""
+"Please enter your old password, for security's sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr ""
+"Por favor introduzca su contraseña anterior, por seguridad, e introduzca la "
+"nueva dos veces."
+
+#: .\templates\registration\password_change_form.html:63
+#: .\templates\registration\password_reset_confirm.html:42
+msgid "Change my password"
+msgstr "Cambiar mi contraseña"
+
+#: .\templates\registration\password_reset_complete.html:7
+#: .\templates\registration\password_reset_complete.html:11
+#: .\templates\registration\password_reset_complete.html:12
+msgid "Password reset complete"
+msgstr "Restablecimiento de contraseña completo."
+
+#: .\templates\registration\password_reset_complete.html:16
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr ""
+"Su contraseña ha sido establecida. Usted quizás desee iniciar sesión ahora."
+
+#: .\templates\registration\password_reset_confirm.html:7
+msgid "Password reset confirmation"
+msgstr "Confirmación de cambio de contraseña "
+
+#: .\templates\registration\password_reset_confirm.html:11
+#: .\templates\registration\password_reset_confirm.html:12
+#: .\templates\registration\password_reset_done.html:7
+#: .\templates\registration\password_reset_form.html:7
+#: .\templates\registration\password_reset_form.html:11
+#: .\templates\registration\password_reset_form.html:12
+msgid "Password reset"
+msgstr "Cambio de contraseña"
+
+#: .\templates\registration\password_reset_confirm.html:18
+msgid "Enter new password"
+msgstr "Introduzca nueva contraseña"
+
+#: .\templates\registration\password_reset_confirm.html:20
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr ""
+"Por favor introduzca su nueva contraseña dos veces, para poder verificar que "
+"la colocó correctamente."
+
+#: .\templates\registration\password_reset_confirm.html:25
+msgid "New password:"
+msgstr "Nueva contraseña:"
+
+#: .\templates\registration\password_reset_confirm.html:34
+msgid "Confirm password:"
+msgstr "Confirmar contraseña:"
+
+#: .\templates\registration\password_reset_confirm.html:48
+msgid "Password reset unsuccessful"
+msgstr "Cambio de contraseña incorrecto."
+
+#: .\templates\registration\password_reset_confirm.html:50
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr ""
+"El enlace de establecimiento de contraseña fue inválido, posiblemente porque "
+"ya ha sido usado. Por favor solicite un nuevo intento de restablecimiento."
+
+#: .\templates\registration\password_reset_done.html:11
+#: .\templates\registration\password_reset_done.html:12
+msgid "Password reset successful"
+msgstr "Establecimiento de contraseña exitoso."
+
+#: .\templates\registration\password_reset_done.html:16
+msgid ""
+"We've emailed you instructions for setting your password to the email "
+"address you submitted. You should be receiving it shortly."
+msgstr ""
+"Hemos enviado las instrucciones para establecer su contraseña al correo "
+"electrónico proporcionado por usted."
+
+#: .\templates\registration\password_reset_form.html:16
+msgid ""
+"Forgotten your password? Enter your email address below, and we'll email "
+"instructions for setting a new one."
+msgstr ""
+"Ha olvidado su contraseña? Introduzca su correo electrónico debajo, y "
+"enviaremos las instrucciones para establecer una nueva."
+
+#: .\templates\registration\password_reset_form.html:21
+msgid "Email address:"
+msgstr "Correo electrónico:"
+
+#: .\templates\registration\password_reset_form.html:30
+msgid "Reset my password"
+msgstr "Restablecer mi contraseña"

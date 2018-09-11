@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-15 16:55-0500\n"
+"PO-Revision-Date: 2018-06-15 05:13-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.8\n"
+
+#: .\profiles\admin.py:17
+msgid "profile"
+msgstr "perfil"
+
+#: .\profiles\forms.py:37
+msgid "Update"
+msgstr "Actualizar"
+
+#: .\profiles\models.py:15
+msgid "Slug"
+msgstr "Nombre corto"
+
+#: .\profiles\models.py:18
+msgid "Profile picture"
+msgstr "Foto Perfil"
+
+#: .\profiles\models.py:22
+msgid "Short Biography"
+msgstr "Biografía corta"
+
+#: .\profiles\models.py:23
+msgid "Email verified"
+msgstr "Correo electrónico verificado"
+
+#: .\profiles\models.py:24
+msgid "Timezone"
+msgstr "Zona horario"
+
+#: .\profiles\templates\profiles\edit_profile.html:7
+#: .\profiles\templates\profiles\show_profile.html:6
+#: .\profiles\templates\profiles\show_profile.html:15
+#: .\profiles\templates\profiles\show_profile.html:38
+msgid "Profile"
+msgstr "Perfil"
+
+#: .\profiles\templates\profiles\edit_profile.html:13
+msgid "Edit Profile"
+msgstr "Editar Perfil"
+
+#: .\profiles\templates\profiles\edit_profile.html:25
+msgid "Personal info"
+msgstr "Información Personal"
+
+#: .\profiles\templates\profiles\edit_profile.html:36
+msgid "Change Password"
+msgstr "Cambiar contraseña"
+
+#: .\profiles\templates\profiles\show_profile.html:39
+msgid "Email"
+msgstr "Correo Electrónico"
+
+#: .\profiles\templates\profiles\show_profile.html:41
+msgid "This email address has been verified"
+msgstr "Este correo electrónico ha sido verificado"
+
+#: .\profiles\templates\profiles\show_profile.html:42
+msgid "Verified"
+msgstr "Verificado"
+
+#: .\profiles\templates\profiles\show_profile.html:44
+msgid "This email address has not been verified"
+msgstr "Este correo electrónico no ha sido verificado"
+
+#: .\profiles\templates\profiles\show_profile.html:45
+msgid "Not Verified"
+msgstr "No verificado"
+
+#: .\profiles\templates\profiles\show_profile.html:48
+msgid "Joined"
+msgstr "Registrado en"
+
+#: .\profiles\templates\profiles\show_profile.html:49
+msgid "Last seen"
+msgstr "Último inicio de sesión"
+
+#: .\profiles\templates\profiles\show_profile.html:54
+#, python-format
+msgid "%(show_user.get_full_name)s's profile "
+msgstr "Perfile de %(show_user.get_full_name)s"
+
+#: .\profiles\templates\profiles\show_profile.html:57
+#, fuzzy, python-format
+#| msgid " '%(show_user.get_full_name)s' permalink"
+msgid " %(show_user.get_full_name)s permalink"
+msgstr "Enlace permanente a %(show_user.get_full_name)s"
+
+#: .\profiles\templates\profiles\show_profile.html:58
+msgid "Permalink"
+msgstr "Enlace permanente"
+
+#: .\profiles\templates\profiles\show_profile.html:60
+msgid "No permalink. See this issue."
+msgstr "No enlace permanente. Vea este problema."
+
+#: .\profiles\templates\profiles\show_profile.html:64
+msgid "Biography"
+msgstr "Biografía"
+
+#: .\profiles\views.py:47
+msgid "There was a problem with the form. Please check the details."
+msgstr "Hubo un problema con el formulario. Por favor revise los detalles."

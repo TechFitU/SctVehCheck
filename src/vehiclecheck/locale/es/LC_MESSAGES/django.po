@@ -1,0 +1,158 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-15 16:55-0500\n"
+"PO-Revision-Date: 2018-06-15 17:02-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.8\n"
+
+#: .\vehiclecheck\apps.py:7
+msgid "Vehicle inspection"
+msgstr "Inspección vehicular"
+
+#: .\vehiclecheck\models.py:17
+#, python-format
+msgid "There is %(count)d %(name)s object"
+msgid_plural "There are %(count)d %(name)s objects"
+msgstr[0] "Existe %(count)d objeto %(name)s"
+msgstr[1] "Existen %(count)d objetos %(name)s"
+
+#: .\vehiclecheck\models.py:26
+msgid "Name"
+msgstr "Nombre"
+
+#: .\vehiclecheck\models.py:26
+msgid "Person/Company"
+msgstr "Persona/Compañía"
+
+#: .\vehiclecheck\models.py:28
+msgid "Employer Identification Number"
+msgstr "Identificación de empleador (RFC)"
+
+#: .\vehiclecheck\models.py:31
+msgid "Created by"
+msgstr "Creado por"
+
+#: .\vehiclecheck\models.py:32
+msgid "Created"
+msgstr "Creado"
+
+#: .\vehiclecheck\models.py:33
+msgid "Last updated"
+msgstr "Ultima actualización"
+
+#: .\vehiclecheck\models.py:38
+msgid "Name complete"
+msgstr "Nombre completo"
+
+#: .\vehiclecheck\models.py:50 .\vehiclecheck\models.py:136
+msgid "Client"
+msgstr "Cliente"
+
+#: .\vehiclecheck\models.py:51
+msgid "Clients"
+msgstr "Clientes"
+
+#: .\vehiclecheck\models.py:55 .\vehiclecheck\models.py:90
+msgid "State"
+msgstr "Estado"
+
+#: .\vehiclecheck\models.py:63 .\vehiclecheck\models.py:68
+msgid "state"
+msgstr "estado"
+
+#: .\vehiclecheck\models.py:64
+msgid "states"
+msgstr "estados"
+
+#: .\vehiclecheck\models.py:69 .\vehiclecheck\models.py:97
+msgid "City"
+msgstr "Ciudad"
+
+#: .\vehiclecheck\models.py:76
+msgid "city"
+msgstr "ciudad"
+
+#: .\vehiclecheck\models.py:77
+msgid "cities"
+msgstr "ciudades"
+
+#: .\vehiclecheck\models.py:86
+msgid "Street"
+msgstr "Calle"
+
+#: .\vehiclecheck\models.py:87
+msgid "House Number(INT)"
+msgstr "Número interior"
+
+#: .\vehiclecheck\models.py:88
+msgid "House Number"
+msgstr "Número de casa"
+
+#: .\vehiclecheck\models.py:89
+msgid "County"
+msgstr "Colonia/Reparto"
+
+#: .\vehiclecheck\models.py:133
+msgid "Current?"
+msgstr "Actual?"
+
+#: .\vehiclecheck\models.py:135
+msgid "Zip Code"
+msgstr "Código Postal"
+
+#: .\vehiclecheck\models.py:151
+msgid "address"
+msgstr "dirección"
+
+#: .\vehiclecheck\models.py:152
+msgid "addresses"
+msgstr "direcciones"
+
+#: .\vehiclecheck\models.py:155
+msgid "Code"
+msgstr "Código"
+
+#: .\vehiclecheck\models.py:156
+msgid "Vehicle Type"
+msgstr "Tipo de Vehículo"
+
+#: .\vehiclecheck\models.py:157
+msgid "Axles Number"
+msgstr "Numero de ejes"
+
+#: .\vehiclecheck\models.py:163
+msgid "vehicle type"
+msgstr "tipo de vehículo"
+
+#: .\vehiclecheck\models.py:164
+msgid "vehicle types"
+msgstr "tipos de vehículos"
+
+#: .\vehiclecheck\models.py:167
+msgid "Type"
+msgstr "Tipo"
+
+#: .\vehiclecheck\models.py:168
+msgid "Service Code"
+msgstr "Código de servicio"
+
+#: .\vehiclecheck\models.py:173
+msgid "service type"
+msgstr "tipo de servicio"
+
+#: .\vehiclecheck\models.py:174
+msgid "service types"
+msgstr "tipos de servicios"

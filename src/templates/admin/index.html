@@ -11,6 +11,14 @@
 
 {% block content %}
 <div id="content-main">
+
+    {% get_language_info for LANGUAGE_CODE as lang %}
+    Language code: {{ lang.code }}<br/>
+    Name of language: {{ lang.name_local }}<br/>
+    Name in English: {{ lang.name }}<br/>
+    Bi-directional: {{ lang.bidi }}<br/>
+    Name in the active language: {{ lang.name_translated }}
+
   {% if app_list %}
     <div class="panel panel-success" id="apps">
       <div class="panel-heading">
@@ -18,7 +26,7 @@
           <button class="btn btn-default" title="{% trans "Apps" %}">
             <span class="glyphicon glyphicon-star-empty"></span>
           </button>
-          <a href="#timeline" class="btn btn-default" title="{% trans "Recent Actions" %}">
+            <a href="#timeline" class="btn btn-default" title='{% trans "Recent Actions" %}'>
             <span class="glyphicon glyphicon-tasks"></span> {% trans "Recent Actions" %}
           </a>
         </div>
@@ -34,7 +42,8 @@
                 <form action="" method="get">
                   <div class="wrapper">
                     <span class="glyphicon glyphicon-search"></span>
-                    <input placeholder="{% trans "Search" %}" class="search form-control input-sm" type="input" name="q">
+                      <input placeholder='{% trans "Search" %}' class="search form-control input-sm" type="input"
+                             name="q">
                     <span class="remove-this label label-info"><span class="glyphicon glyphicon-remove"></span> <span class="text"></span></span>
                   </div>
                 </form>

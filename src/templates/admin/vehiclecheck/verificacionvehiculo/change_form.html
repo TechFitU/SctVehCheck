@@ -180,7 +180,7 @@
           },
           statusCode: {
             403: function() {
-              location.href = "http://localhost/verificaciones/admin/login/?next=/admin/";
+              location.href = "{{ request.get_host }}/verificaciones/admin/login/?next=/admin/";
             }
           }
         });
