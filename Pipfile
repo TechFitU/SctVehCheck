@@ -7,8 +7,7 @@ name = "pypi"
 
 [packages]
 
-dj-database-url = "*"
-django = ">=2.0"
+Django = ">=2.0"
 django-environ = ">=0.4.3"
 django-braces = ">=1.12.0"
 django-crispy-forms = ">=1.7.2"
@@ -23,7 +22,7 @@ django-adminactions = "*"
 django-solo = "*"
 django-smart-selects = "*"
 django-import-export = "*"
-bootstrap-admin = "*"
+bootstrap_admin = "*"
 requests = "*"
 python-memcached = "*"
 "django[argon2]" = "*"
@@ -33,7 +32,8 @@ python-memcached = "*"
 [dev-packages]
 
 django-debug-toolbar = ">=1.8"
-werkzeug = ">=0.12.2"
+Werkzeug = ">=0.12.2"
+pytest = "*"
 
 
 [requires]

@@ -17,9 +17,9 @@ class DateWidget(forms.DateInput):
     class Media:
         extend = False  # No extiende las definiciones de javascripts ni css de su clase padre
         css = {
-            'all': ('admin/css/Beatpicker.min.css',)
+            'all': ('dsdsaadmin1/css/Beatpicker.min.css',)
         }
-        js = ('admin/js/Beatpicker.min.js', )
+        js = ('dsdsaadmin1/js/Beatpicker.min.js',)
 
 
 class CustomCheckBoxWidget(forms.CheckboxInput):
@@ -38,7 +38,7 @@ class CustomCheckBoxWidget(forms.CheckboxInput):
     class Media:
         extend = False  # No extiende las definiciones de javascripts ni css de su clase padre
         css = {
-            'all': ('admin/css/customcheckbox.css',)
+            'all': ('dsdsaadmin1/css/customcheckbox.css',)
         }
 
 
@@ -53,7 +53,6 @@ class TimeWidget(forms.TextInput):
     class Media:
         extend = False  # No extiende las definiciones de javascripts ni css de su clase padre
         css = {
-            'all': ('admin/css/timepicki.css',)
+            'all': ('dsdsaadmin1/css/timepicki.css',)
         }
-        js = ('admin/js/timepicki.js', )
-
+        js = ('dsdsaadmin1/js/timepicki.js',)

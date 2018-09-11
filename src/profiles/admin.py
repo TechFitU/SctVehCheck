@@ -1,17 +1,23 @@
 from __future__ import unicode_literals
-from django.contrib import admin
+
 from authtools.admin import NamedUserAdmin
-from .models import Profile
+from django.contrib import admin
 from django.contrib.auth import get_user_model
 from django.urls import reverse
 from django.utils.html import format_html
+from django.utils.text import gettext_lazy
+
+from .models import Profile
 
 User = get_user_model()
 
 
+# Define an inline dsdsaadmin1 descriptor for Employee model
+# which acts a bit like a singleton
 class UserProfileInline(admin.StackedInline):
     model = Profile
-
+    can_delete = False
+    verbose_name_plural = gettext_lazy("profile")
 
 class NewUserAdmin(NamedUserAdmin):
     inlines = [UserProfileInline]
@@ -25,7 +31,7 @@ class NewUserAdmin(NamedUserAdmin):
         url = reverse("profiles:show",
                       kwargs={"slug": obj.profile.slug})
         # Unicode hex b6 is the Pilcrow sign
-        return format_html('<a href="{}">{}</a>'.format(url, '\xb6'))
+        return format_html('<a href="{}">{}</a>'.format(url, 'Go'))
 
 
 admin.site.unregister(User)

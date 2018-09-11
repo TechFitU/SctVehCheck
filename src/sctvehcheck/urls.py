@@ -16,10 +16,9 @@ urlpatterns = [
     #path(r'^home/$', hello.views.index, name='index'),
     #path(r'^db/', hello.views.db, name='db'),
     path('hello/', hello.views.index, name='index'),
-    path('db/', hello.views.db, name='db'),
     path('about/', views.AboutPage.as_view(), name='about'),
     path('users/', include(profiles.urls)),
-    path('account/', include(accounts.urls)),
+    path(r'account/', include(accounts.urls)),
 
     # include the django-ajax-selects lookup urls
     path('admin/lookups/', include('ajax_select.urls')),
@@ -31,7 +30,7 @@ urlpatterns = [
     path('vehiclecheck/', include(vehiclecheck.urls)),
 
     url(r'^adminactions/', include('adminactions.urls')),
-    #url(r'^admin/', admin_site.urls),
+    path('i18n/', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),
 ]
 

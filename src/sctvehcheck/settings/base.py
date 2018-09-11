@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 from pathlib import Path
 
 from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / "directory"
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -79,8 +80,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-
     'authtools',
     'crispy_forms',
     'easy_thumbnails',
@@ -106,8 +105,7 @@ INSTALLED_APPS = (
     #Aplicacion para importar/exportar datos en aplicaciones django
     'import_export',
     'adminactions',
-
-    'ajax_select'
+    'ajax_select'  # django-ajax-selects
 
 
 
@@ -121,6 +119,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware'
 ]
 
 ROOT_URLCONF = 'sctvehcheck.urls'
@@ -139,7 +138,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en-US'
 
 TIME_ZONE = 'UTC'
 
@@ -154,11 +153,21 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Locales folder
+
+# Languages support
+
+# Definition of languages supported: django/conf/global_settings.py
+LANGUAGES = [
+
+    ('en', _('English (US)')),
+    ("es", _('Spanish'))
+]
 
 # Allowed IP adresess
 ALLOWED_HOSTS = []
 
-# Crispy Form Theme - Bootstrap 3
+#### Crispy Form Theme - Bootstrap 3 ###
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # For Bootstrap 3, change error alert to 'danger'
@@ -166,6 +175,7 @@ from django.contrib import messages
 MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
+### End Crispy Form settings ####
 
 # Authentication Settings
 AUTH_USER_MODEL = 'authtools.User'

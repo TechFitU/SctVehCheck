@@ -29,6 +29,17 @@
         <li>The platform then spins up a dyno, a lightweight container that provides an isolated environment in which the slug can be mounted and executed.</li>
         <li>You can scale your app, manage it, and deploy over <a href="https://addons.heroku.com/">150 add-on services</a>, from the Dashboard or CLI.</li>
       </ul>
+
+
+      <h2>Greetings delivered for our visitors.</h2>
+      <ul>
+
+        {% for greeting in greetings %}
+        <li>{{ greeting.when }}</li>
+        {% endfor %}
+
+      </ul>
+
     </div>
     <div class="col-md-6">
       <h3><span class="glyphicon glyphicon-link"></span> Next Steps</h3>

@@ -1,8 +1,11 @@
 from __future__ import unicode_literals
-from django.views import generic
-from django.shortcuts import get_object_or_404, redirect
+
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import get_object_or_404, redirect
+from django.utils.translation import gettext_lazy as _
+from django.views import generic
+
 from . import forms
 from . import models
 
@@ -12,17 +15,17 @@ class ShowProfile(LoginRequiredMixin, generic.TemplateView):
     http_method_names = ['get']
 
     def get(self, request, *args, **kwargs):
-        slug = self.kwargs.get('slug')
+        slug = self.kwargs.get('slug', None)
         if slug:
             profile = get_object_or_404(models.Profile, slug=slug)
             user = profile.user
         else:
-            user = self.request.user
+            user = request.user
 
-        if user == self.request.user:
+        if user == request.user:
             kwargs["editable"] = True
         kwargs["show_user"] = user
-        return super().get(request, *args, **kwargs)
+        return super(ShowProfile, self).get(request, *args, **kwargs)
 
 
 class EditProfile(LoginRequiredMixin, generic.TemplateView):
@@ -35,7 +38,7 @@ class EditProfile(LoginRequiredMixin, generic.TemplateView):
             kwargs["user_form"] = forms.UserForm(instance=user)
         if "profile_form" not in kwargs:
             kwargs["profile_form"] = forms.ProfileForm(instance=user.profile)
-        return super().get(request, *args, **kwargs)
+        return super(EditProfile, self).get(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
         user = self.request.user
@@ -44,8 +47,8 @@ class EditProfile(LoginRequiredMixin, generic.TemplateView):
                                          request.FILES,
                                          instance=user.profile)
         if not (user_form.is_valid() and profile_form.is_valid()):
-            messages.error(request, "There was a problem with the form. "
-                           "Please check the details.")
+            messages.error(request, _("There was a problem with the form. "
+                                      "Please check the details."))
             user_form = forms.UserForm(instance=user)
             profile_form = forms.ProfileForm(instance=user.profile)
             return super().get(request,

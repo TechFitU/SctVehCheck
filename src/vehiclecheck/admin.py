@@ -8,14 +8,14 @@ from django.utils import timezone
 from import_export import resources
 # Register your models here.
 from vehiclecheck.models import Cliente, Vehiculo, VerificacionVehiculo, Domicilio, TipoVehiculo, \
-    TipoServicio, Estado
+    TipoServicio
 
 # Import custom forms
 from .forms import ClienteForm, VerificacionVehiculoForm, VehiculoForm, DomicilioForm
 
 
 # Clearable input widget for text fields
-# django-ajax-selects form and admin
+# django-ajax-selects form and dsdsaadmin1
 
 class CustomVehiculoInlineFormSet(BaseInlineFormSet):
     def save(self):
@@ -62,7 +62,7 @@ class DomicilioStackedInline(admin.StackedInline):
 
 class ClienteAdmin(admin.ModelAdmin):
     """
-    Customize the look of the auto-generated admin for the Persona model
+    Customize the look of the auto-generated dsdsaadmin1 for the Persona model
     1. Changing the way in each choice in database is shown
     (new one is in table form, with more than a column)
     2. Displaying the way of adding new question objects,
@@ -110,7 +110,7 @@ class ClienteAdmin(admin.ModelAdmin):
 
 class VehiculoAdmin(admin.ModelAdmin):
     """
-    Customize the look of the auto-generated admin for the Persona model
+    Customize the look of the auto-generated dsdsaadmin1 for the Persona model
     1. Changing the way in each choice in database is shown
     (new one is in table form, with more than a column)
     2. Displaying the way of adding new question objects,
@@ -239,7 +239,7 @@ from import_export.admin import ImportExportModelAdmin
 class VerificacionVehiculoAdmin(ImportExportModelAdmin):
     #Camino a la plantilla personalizada
 
-    #change_list_template = 'admin/vehiclecheck/verificacionvehiculo/change_list.html'
+    # change_list_template = 'dsdsaadmin1/vehiclecheck/verificacionvehiculo/change_list.html'
 
     resource_class = VerificacionVehiculoResource
     readonly_fields= ('creado_por', )
@@ -454,12 +454,12 @@ admin.site_title = u"%s" % config.nombre_sitio
 admin.index_title = u"%s" % config.nombre_sitio
 
 admin.site.register(Cliente, ClienteAdmin)
-#admin.register(User, UserAdmin)
-#admin.register(Group, GroupAdmin)
+# dsdsaadmin1.register(User, UserAdmin)
+#dsdsaadmin1.register(Group, GroupAdmin)
 admin.site.register(Vehiculo, VehiculoAdmin)
 admin.site.register(VerificacionVehiculo, VerificacionVehiculoAdmin)
 admin.site.register(TipoServicio)
 admin.site.register(TipoVehiculo)
-admin.site.register(Estado)
+#dsdsaadmin1.site.register(Estado)
 # register all adminactions (export to csv, export to xls, mass update, etc)
 actions.add_to_site(site)

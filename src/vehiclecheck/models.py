@@ -1,25 +1,43 @@
 # -*- coding: utf-8 -*-
-from django.db import models, ProgrammingError
-
-from django.utils.html import format_html
-from smart_selects.db_fields import ChainedForeignKey
 from django.conf import settings
+from django.db import models, ProgrammingError
+from django.utils.html import format_html
+from django.utils.translation import ngettext, gettext_lazy
+from smart_selects.db_fields import ChainedForeignKey
+
+
 # Create your models here.
+class BaseModel(object):
+    @classmethod
+    def how_many(cls):
+        count = cls.objects.count()
+        text = ngettext(
+            'There is %(count)d %(name)s object',
+            'There are %(count)d %(name)s objects',
+            count) % {
+                   'count': count,
+                   'name': cls._meta.verbose_name,
+               }
+        return text
 
-class Cliente(models.Model):
-    nombre = models.CharField(max_length=150, db_index=True, help_text="Persona/Empresa")
 
-    rfc = models.CharField(verbose_name="RFC", max_length=30, db_index=True, null=True, blank=True)
+class Cliente(models.Model, BaseModel):
+    nombre = models.CharField(gettext_lazy("Name"), max_length=150, db_index=True,
+                              help_text=gettext_lazy("Person/Company"))
+
+    rfc = models.CharField(verbose_name=gettext_lazy("Employer Identification Number"), max_length=30, db_index=True,
+                           null=True, blank=True)
     #tarjeta_circulacion = models.CharField(u"Tarjeta circulación", max_length=25)
 
-    creado_por = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
-    creado = models.DateTimeField(auto_now_add=True)
-    ultima_actualizacion = models.DateTimeField(u"Última actualización",auto_now=True)
+    creado_por = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT,
+                                   verbose_name=gettext_lazy("Created by"))
+    creado = models.DateTimeField(auto_now_add=True, verbose_name=gettext_lazy("Created"))
+    ultima_actualizacion = models.DateTimeField(gettext_lazy("Last updated"), auto_now=True)
 
     def complete_name(self):
         return "%s" % (self.nombre,)
 
-    complete_name.short_description = "Nombre completo"
+    complete_name.short_description = gettext_lazy("Name complete")
     complete_name.admin_order_field = "nombre"
 
     def __str__(self):
@@ -29,12 +47,13 @@ class Cliente(models.Model):
         db_table = "cliente"
         ordering = ['-creado']
         get_latest_by = 'creado'
-        verbose_name="cliente"
-        verbose_name_plural="clientes"
+        verbose_name = gettext_lazy("Client")
+        verbose_name_plural = gettext_lazy("Clients")
 
-class Estado(models.Model):
+
+class Estado(models.Model, BaseModel):
     idestado = models.CharField(primary_key=True, max_length=25)
-    nombre = models.CharField(max_length=45)
+    nombre = models.CharField(max_length=45, verbose_name=gettext_lazy("State"))
 
 
     def __str__(self):
@@ -42,22 +61,24 @@ class Estado(models.Model):
 
     class Meta:
         db_table = "estado"
-        verbose_name="estado"
-        verbose_name_plural="estados"
+        verbose_name = gettext_lazy("state")
+        verbose_name_plural = gettext_lazy("states")
 
-class Municipio(models.Model):
+
+class Municipio(models.Model, BaseModel):
     idmunicipio = models.IntegerField(primary_key=True)
-    idestado = models.ForeignKey(Estado, db_column="idestado", on_delete=models.CASCADE)
-    nombre = models.CharField(max_length=150)
+    idestado = models.ForeignKey(Estado, db_column="idestado", on_delete=models.CASCADE,
+                                 verbose_name=gettext_lazy("state"))
+    nombre = models.CharField(max_length=150, verbose_name=gettext_lazy("City"))
 
     def __str__(self):
         return u'%s' % self.nombre
 
     class Meta:
         db_table = "municipio"
-        verbose_name="municipio"
-        verbose_name_plural="municipios"
-        #unique_together = ('nombre', 'estado')
+        verbose_name = gettext_lazy("city")
+        verbose_name_plural = gettext_lazy("cities")
+        # unique_together = ('nombre', 'idestado')
 
 
 class Domicilio(models.Model):
@@ -65,17 +86,18 @@ class Domicilio(models.Model):
     Clase Domicilio, un cliente tendra muchos o un solo domicilio.
     A la hora de efectuar el chequeo del vehiculo debe pasar la direccion específica.
     """
-    calle = models.CharField(max_length=120, null=True, blank=True)
-    numero_interior = models.CharField(verbose_name="Número interior", default="S/N", max_length = 10 )
-    numero_exterior = models.CharField("Número exterior", default="S/N", max_length = 10)
-    colonia = models.CharField(max_length=100, null=True, blank=True)
-    estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
+    calle = models.CharField(max_length=120, null=True, blank=True, verbose_name=gettext_lazy('Street'))
+    numero_interior = models.CharField(verbose_name=gettext_lazy("House Number(INT)"), default="S/N", max_length=10)
+    numero_exterior = models.CharField(gettext_lazy("House Number"), default="S/N", max_length=10)
+    colonia = models.CharField(verbose_name=gettext_lazy("County"), max_length=100, null=True, blank=True)
+    estado = models.ForeignKey(Estado, on_delete=models.PROTECT, verbose_name=gettext_lazy("State"))
     municipio = ChainedForeignKey(
         Municipio,
         chained_field="estado",
         chained_model_field="idestado",
         show_all=True,
-        auto_choose=True
+        auto_choose=True,
+        verbose_name=gettext_lazy("City")
     )
     # estado = models.CharField(max_length=30, choices=(
     #     ('TAMAULIPAS', 'TAMAULIPAS'),
@@ -111,10 +133,10 @@ class Domicilio(models.Model):
     #     ('ZACATECAS', 'ZACATECAS')
     # ), default="TAMAULIPAS"
     # )
-    actual = models.BooleanField(default=True)
+    actual = models.BooleanField(default=True, verbose_name=gettext_lazy("Current?"))
     #municipio = models.CharField(max_length=100, null=True, blank=True)
-    codigo_postal = models.IntegerField("Código postal:", null=True, blank=True)
-    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    codigo_postal = models.IntegerField(verbose_name=gettext_lazy("Zip Code"), null=True, blank=True)
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, verbose_name=gettext_lazy("Client"))
 
     def save(self, *args, **kwargs):
         super(Domicilio, self).save(*args, **kwargs) # Call the "real" save() method.
@@ -129,30 +151,30 @@ class Domicilio(models.Model):
 
     class Meta:
         db_table = "domicilio"
-        verbose_name="Domicilio"
-        verbose_name_plural="Domicilios"
+        verbose_name = gettext_lazy("address")
+        verbose_name_plural = gettext_lazy("addresses")
 
 class TipoVehiculo(models.Model):
-    codigo = models.CharField(u"Código", max_length=10, unique=True)
-    tipo = models.CharField(u"Tipo", max_length=50, unique=True)
-    numero_ejes = models.IntegerField(u"No. Ejes", blank=True, null=True)
+    codigo = models.CharField(gettext_lazy(u"Code"), max_length=10, unique=True)
+    tipo = models.CharField(gettext_lazy("Vehicle Type"), max_length=50, unique=True)
+    numero_ejes = models.IntegerField(gettext_lazy(u"Axles Number"), blank=True, null=True)
 
     def __str__(self):
         return u"%s" % (self.tipo, )
     class Meta:
         db_table = "tipovehiculo"
-        verbose_name=u"Tipo de vehículo"
-        verbose_name_plural=u"Tipos de vehículos"
+        verbose_name = gettext_lazy(u"vehicle type")
+        verbose_name_plural = gettext_lazy(u"vehicle types")
 
 class TipoServicio(models.Model):
-    nombre = models.CharField("Nombre tipo", max_length=150, unique=True)
-    codigo = models.CharField(u"Código", max_length=5, unique=True)
+    nombre = models.CharField(gettext_lazy(u"Type"), max_length=150, unique=True)
+    codigo = models.CharField(gettext_lazy(u"Service Code"), max_length=5, unique=True)
     def __str__(self):
         return u"%s" % (self.nombre,)
     class Meta:
         db_table = "tiposervicio"
-        verbose_name=u"Tipo de servicio"
-        verbose_name_plural=u"Tipos de servicio"
+        verbose_name = gettext_lazy(u"service type")
+        verbose_name_plural = gettext_lazy(u"service types")
 
 
 
