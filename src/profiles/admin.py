@@ -12,7 +12,7 @@ from .models import Profile
 User = get_user_model()
 
 
-# Define an inline dsdsaadmin1 descriptor for Employee model
+# Define an inline admin descriptor for Employee model
 # which acts a bit like a singleton
 class UserProfileInline(admin.StackedInline):
     model = Profile
